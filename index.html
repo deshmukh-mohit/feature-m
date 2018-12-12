@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<title>indio</title>
+	<link rel="icon" href="./images/img2.png" type="image/gif" sizes="16x16">
 	<link rel="stylesheet" type="text/css" href="form_css.css">
 	<link rel="stylesheet" href="form_validation.js">
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
@@ -29,14 +31,65 @@
 	<div class="row top">
 		<div class="col1">
 			<img src="./images/img1.png"/>
-			<p class="paragraph"><span class="text">Easy to use:</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porta ipsum eu hendrerit accumsan. Estiam eget varius ex, ac aliquet dolor.</p>
-			<p class="paragraph"><span class="text">Simple Onboarding:</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porta ipsum eu hendrerit accumsan.</p>
-			<p class="paragraph"><span class="text">Advanced Features</span>Lorem ipsum dolor sit amet,consectetur adipiscing elit.</p>
+			<p class="paragraph"><span class="text">Easy to use: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porta ipsum eu hendrerit accumsan. Estiam eget varius ex, ac aliquet dolor.</p>
+			<p class="paragraph"><span class="text">Simple Onboarding: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porta ipsum eu hendrerit accumsan.</p>
+			<p class="paragraph"><span class="text">Advanced Features: </span>Lorem ipsum dolor sit amet,consectetur adipiscing elit.</p>
 		</div>
 		<div class="col2">
 			<div class="form-heading">
 				<span class="form-heading-1 ">Sign up below to request a demo or call us at</span><br>
 				<span class="form-heading-2 keep-center">(415) 200-1404</span>
+			</div>
+			<div class="col3">
+                    <label for="First name">First Name <span class="asteric">*</span> </label>
+                    <input class="input-box" type="text" placeholder="First Name">
+			</div>
+			<div class="col4">
+				<label for="Last name">Last Name <span class="asteric">*</span> </label>
+                <input class="input-box" type="text" placeholder="Last Name">
+            </div>
+            <div>
+            	<label for="Email ID">Email ID <span class="asteric">*</span> </label>
+                <input class="input-box" type="text" placeholder="Email ID">
+            </div>
+            <div class="col3">
+                    <label for="Password">Password <span class="asteric">*</span> </label>
+                    <input class="input-box" type="text" placeholder="Password">
+			</div>
+			<div class="col4">
+				<label for="Confirm Password">Confirm Password <span class="asteric">*</span> </label>
+                <input class="input-box" type="text" placeholder="Confirm Password">
+            </div>
+            <div>
+            	<label for="Phone No">Phone No <span class="asteric">*</span> </label>
+                <input class="input-box" type="text" placeholder="Phone No">
+            </div>
+            <div class="col3">
+            	<label for="Birthday">Birthday </label><br>
+            	<input type="date" name="bday">
+            </div>
+            <div class="col4">
+            	<label for="Country">Country </label><br>
+            	<select required>
+  					<option value="">None</option>
+ 		 			<option value="China">China</option>
+ 		 			<option value="France">France</option>
+ 		 			<option value="Germany">Germany</option>
+ 		 			<option value="India">India</option>
+				</select>
+			</div>
+			<div class="col3">
+				<label for="Comments">Comments </label><br>
+				<textarea rows="6" cols="30" placeholder="Remarks Here"></textarea>
+			</div>
+			<div class="col4">
+				<label for="Gender">Gender </label><br>
+            	<input type="radio" name="gender" value="male"> Male<br>
+  				<input type="radio" name="gender" value="female"> Female<br>
+ 				<input type="radio" name="gender" value="other"> Other
+			</div>
+			<div class="col3">
+				<button class="button-register" type="button" value="Register">Register</button>
 			</div>
 		</div>
 	</div>

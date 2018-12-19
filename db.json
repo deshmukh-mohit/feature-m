@@ -1,0 +1,27 @@
+{
+  "person": [
+    {
+      "firstName": "mohit",
+      "lastName": "deshmukh",
+      "emailId": "mohit",
+      "password": "mohit",
+      "phone": "546547476",
+      "birthday": "2018-12-06",
+      "address": "jgddhghdfu",
+      "country": "France",
+      "gender": "male",
+      "id": 1
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "emailId": "",
+      "password": "",
+      "phone": "",
+      "birthday": "",
+      "address": "",
+      "country": "None",
+      "id": 2
+    },
+  ]
+}

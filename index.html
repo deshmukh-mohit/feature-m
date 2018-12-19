@@ -4,7 +4,6 @@
 	<title>indio</title>
 	<link rel="icon" href="./images/img2.png" type="image/gif" sizes="16x16">
 	<link rel="stylesheet" type="text/css" href="form_css.css">
-	<link rel="stylesheet" href="form_validation.js">
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
 </head>
 <body>
@@ -42,35 +41,35 @@
 			</div>
 			<div class="col3">
                     <label for="First name">First Name <span class="asteric">*</span> </label>
-                    <input class="input-box" type="text" placeholder="First Name">
+                    <input class="input-box" id="fn" type="text" placeholder="First Name">
 			</div>
 			<div class="col4">
 				<label for="Last name">Last Name <span class="asteric">*</span> </label>
-                <input class="input-box" type="text" placeholder="Last Name">
+                <input class="input-box" id="ln" type="text" placeholder="Last Name">
             </div>
             <div>
             	<label for="Email ID">Email ID <span class="asteric">*</span> </label>
-                <input class="input-box" type="text" placeholder="Email ID">
+                <input class="input-box" id="ID" type="text" placeholder="Email ID">
             </div>
             <div class="col3">
                     <label for="Password">Password <span class="asteric">*</span> </label>
-                    <input class="input-box" type="text" placeholder="Password">
+                    <input class="input-box" id="pwd" type="text" placeholder="Password">
 			</div>
 			<div class="col4">
 				<label for="Confirm Password">Confirm Password <span class="asteric">*</span> </label>
-                <input class="input-box" type="text" placeholder="Confirm Password">
+                <input class="input-box" id="cpwd" type="text" placeholder="Confirm Password">
             </div>
             <div>
             	<label for="Phone No">Phone No <span class="asteric">*</span> </label>
-                <input class="input-box" type="text" placeholder="Phone No">
+                <input class="input-box" id="phn" type="text" placeholder="Phone No">
             </div>
             <div class="col3">
             	<label for="Birthday">Birthday </label><br>
-            	<input type="date" name="bday">
+            	<input type="date" id="bday" name="bday">
             </div>
             <div class="col4">
             	<label for="Country">Country </label><br>
-            	<select required>
+            	<select id="cn" required>
   					<option value="">None</option>
  		 			<option value="China">China</option>
  		 			<option value="France">France</option>
@@ -79,8 +78,8 @@
 				</select>
 			</div>
 			<div class="col3">
-				<label for="Comments">Comments </label><br>
-				<textarea rows="6" cols="30" placeholder="Remarks Here"></textarea>
+				<label for="Adress">Adress </label><br>
+				<textarea rows="6" cols="30" id="ad" placeholder="Adress Here"></textarea>
 			</div>
 			<div class="col4">
 				<label for="Gender">Gender </label><br>
@@ -88,10 +87,27 @@
   				<input type="radio" name="gender" value="female"> Female<br>
  				<input type="radio" name="gender" value="other"> Other
 			</div>
-			<div class="col3">
-				<button class="button-register" type="button" value="Register">Register</button>
+			<div >
+				<button class="button-register" id="button" type="button" value="Register">Register</button>
 			</div>
 		</div>
 	</div>
+	<div class="row">
+    <div class="table">
+      <table>
+        <thead>
+          <th>First Name</th>
+          <th>Last Name</th>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+      </table>
+    </div>
+  </div>
 </body>
+<footer>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript" src="script_form.js"></script>
+</footer>
 </html>

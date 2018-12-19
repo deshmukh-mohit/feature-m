@@ -34,26 +34,26 @@
 			<p class="paragraph"><span class="text">Simple Onboarding: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porta ipsum eu hendrerit accumsan.</p>
 			<p class="paragraph"><span class="text">Advanced Features: </span>Lorem ipsum dolor sit amet,consectetur adipiscing elit.</p>
 		</div>
-		<div class="col2">
+		<div class="col2 check-asteric">
 			<div class="form-heading">
 				<span class="form-heading-1 ">Sign up below to request a demo or call us at</span><br>
 				<span class="form-heading-2 keep-center">(415) 200-1404</span>
 			</div>
 			<div class="col3">
                     <label for="First name">First Name <span class="asteric">*</span> </label>
-                    <input class="input-box" id="fn" type="text" placeholder="First Name">
+                    <input class="input-box" id="firstName" type="text" placeholder="First Name">
 			</div>
 			<div class="col4">
 				<label for="Last name">Last Name <span class="asteric">*</span> </label>
-                <input class="input-box" id="ln" type="text" placeholder="Last Name">
+                <input class="input-box" id="lastName" type="text" placeholder="Last Name">
             </div>
             <div>
             	<label for="Email ID">Email ID <span class="asteric">*</span> </label>
-                <input class="input-box" id="ID" type="text" placeholder="Email ID">
+                <input class="input-box" id="emailId" type="text" placeholder="Email ID">
             </div>
             <div class="col3">
                     <label for="Password">Password <span class="asteric">*</span> </label>
-                    <input class="input-box" id="pwd" type="text" placeholder="Password">
+                    <input class="input-box" id="password" type="text" placeholder="Password">
 			</div>
 			<div class="col4">
 				<label for="Confirm Password">Confirm Password <span class="asteric">*</span> </label>
@@ -61,15 +61,15 @@
             </div>
             <div>
             	<label for="Phone No">Phone No <span class="asteric">*</span> </label>
-                <input class="input-box" id="phn" type="text" placeholder="Phone No">
+                <input class="input-box" id="phone" type="text" placeholder="Phone No">
             </div>
             <div class="col3">
             	<label for="Birthday">Birthday </label><br>
-            	<input type="date" id="bday" name="bday">
+            	<input class="input-box" type="date" id="birthday" name="bday">
             </div>
             <div class="col4">
             	<label for="Country">Country </label><br>
-            	<select id="cn" required>
+            	<select id="country" class="input-box" required>
   					<option value="">None</option>
  		 			<option value="China">China</option>
  		 			<option value="France">France</option>
@@ -79,10 +79,10 @@
 			</div>
 			<div class="col3">
 				<label for="Adress">Adress </label><br>
-				<textarea rows="6" cols="30" id="ad" placeholder="Adress Here"></textarea>
+				<textarea rows="6" cols="30" class="input-box" id="address" placeholder="Adress Here"></textarea>
 			</div>
 			<div class="col4">
-				<label for="Gender">Gender </label><br>
+				<label for="Gender" class="input-box">Gender </label><br>
             	<input type="radio" name="gender" value="male"> Male<br>
   				<input type="radio" name="gender" value="female"> Female<br>
  				<input type="radio" name="gender" value="other"> Other
@@ -94,10 +94,16 @@
 	</div>
 	<div class="row">
     <div class="table">
-      <table>
+      <table class="tbl">
         <thead>
           <th>First Name</th>
           <th>Last Name</th>
+          <th>Email ID</th>
+          <th>Phone No.</th>
+          <th>Gender</th>
+          <th>Birth Date</th>
+          <th>Country</th>
+          <th>Adress</th> 
         </thead>
         <tbody id="tbody">
 

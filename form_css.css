@@ -150,6 +150,12 @@ input[type=text],input[type=date], select {
   box-sizing: border-box;
 }
 
+.input-box{
+  margin-bottom: 0px;
+}
+.asteric{
+  margin: 0px;
+}
 [type="date"]::-webkit-inner-spin-button {
   display: none;
 }

@@ -58,25 +58,37 @@ $(document).ready(function(){
             }
 }) */
  }); 
-    
+    var fname=/[^-\s]/;
+    var lname=/^\S*$/;
+    var eid=/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+    var phn=/^(\+\d{1,3}[- ]?)?\d{10}$/;
+    var pass=/^([a-zA-Z0-9@*#])$/;
+    validate("#firstName","Invalid First Name",20,5,fname);
+    validate("#lastName","Invalid Last Name",20,5,lname);
+    validate("#emailId","Invalid Email ID",30,9,eid);
+    validate("#phone","Invalid Phone Number",14,10,phn);
+    validate("#password","min 8 and max 15 char",15,8,pass);
+
 function validate(fieldId, msg, maxLen, minLen, regEx){   
+    //console.log(msg)
+    var color='red';
     var isValid = false;
     $(fieldId).focusout(function(){
-        console.log("In");
+        //console.log("In");
         var $this = $(this)
+        //var regex = new RegExp(regEx);
         var fieldLen = $(this).val().length;
-        if(fieldLen < minLen || fieldLen > maxLen){
+        console.log(minLen);
+        var val=$(this).val();
+
+        if(fieldLen < minLen && fieldLen > maxLen && regEx.test(val)){
             $this.next('.asteric').text(msg).show();
             $this.addClass('input-box');
+            $('.asteric').css('color', color);
         }else {
             $this.next('.asteric').text(msg).hide();
             $this.removeClass('input-box');
         }
-        /*if(regEx) {
-            regEx.test($(this).val());
-        }*/
     })
 }
 
-validate("#firstName","*",4,5,"/[^-\s]/");
-validate("#lastName","*",20,5,"/^\S*$/");

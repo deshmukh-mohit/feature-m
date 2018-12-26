@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>indio</title>
 	<link rel="icon" href="./images/img2.png" type="image/gif" sizes="16x16">
 	<link rel="stylesheet" type="text/css" href="form_css.css">
@@ -34,7 +35,7 @@
 			<p class="paragraph"><span class="text">Simple Onboarding: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porta ipsum eu hendrerit accumsan.</p>
 			<p class="paragraph"><span class="text">Advanced Features: </span>Lorem ipsum dolor sit amet,consectetur adipiscing elit.</p>
 		</div>
-		<div class="col2 check-asteric">
+		<div class="col2">
 			<div class="form-heading">
 				<span class="form-heading-1 ">Sign up below to request a demo or call us at</span><br>
 				<span class="form-heading-2 keep-center">(415) 200-1404</span>
@@ -91,12 +92,21 @@
 				<textarea rows="6" cols="30" class="input-box" id="address" placeholder="Adress Here"></textarea>
 				<span class="asteric"></span>
 			</div>
-			<div class="col4">
-				<label for="Gender" class="input-box">Gender </label><br>
-            	<input type="radio" name="gender" value="male"> Male<br>
-  				<input type="radio" name="gender" value="female"> Female<br>
- 				<input type="radio" name="gender" value="other"> Other<br>
- 				<span class="asteric"></span>
+			<div class="col4 ">
+				<label for="Gender" class="input-box">Gender </label>
+				<input type="radio" checked="checked" name="gender">
+				<label class="radio"> Male</label>
+				 <input type="radio" name="gender">
+				<label class="radio"> Female</label>
+				 <input type="radio" name="gender">
+				<label class="radio"> Other</label>
+				 
+				
+				<!-- <label for="Gender" class="input-box">Gender </label>
+            	<input type="radio" name="gender" value="male"> Male
+  				<input type="radio" name="gender" value="female"> Female
+ 				<input type="radio" name="gender" value="other"> Other
+ 				<span class="asteric"></span> -->
 			</div>
 			<div >
 				<button class="button-Submit" id="button" type="button" value="Submit">Submit</button>
@@ -122,13 +132,14 @@
     </div>
 </body>
 <footer>
+	<div class="footer">
             <img class="footer-logo" src="./images/logo.png">
-            <nav class="footer">
+            <nav class="footer-nav">
                 <a href="#">Terms Of Service</a>
                 <a href="#">Privacy Policy</a>
                 <span>© 2017 Indio Technologies,INC.(415)200-1404</span>
             </nav>
-     
+     </div>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script type="text/javascript" src="script_form.js"></script>
 </footer>

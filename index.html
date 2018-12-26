@@ -62,7 +62,7 @@
 			</div>
 			<div class="col4">
 				<label for="Confirm Password">Confirm Password </label>
-                <input class="input-box" id="cpwd" type="text" placeholder="Confirm Password">
+                <input class="input-box" id="conpwd" type="text" placeholder="Confirm Password">
                 <span class="asteric"></span> 
             </div>
             <div>
@@ -71,23 +71,23 @@
                 <span class="asteric"></span> 
             </div>
             <div class="col3">
-            	<label for="Birthday">Birthday <span class="asteric"></span></label><br>
+            	<label for="Birthday">Birthday </span></label><br>
             	<input class="input-box" type="date" id="birthday" name="bday">
             	<span class="asteric"></span>
             </div>
             <div class="col4">
-            	<label for="Country">Country <span class="asteric"></span></label><br>
+            	<label for="Country">Country </label><br>
             	<select id="country" class="input-box" required>
-  					<option value="">None</option>
- 		 			<option value="China">China</option>
- 		 			<option value="France">France</option>
- 		 			<option value="Germany">Germany</option>
- 		 			<option value="India">India</option>
+  					<option value="0">None</option>
+ 		 			<option value="1">China</option>
+ 		 			<option value="2">France</option>
+ 		 			<option value="3">Germany</option>
+ 		 			<option value="4">India</option>
 				</select>
 				<span class="asteric"></span>
 			</div>
 			<div class="col3">
-				<label for="Adress">Adress <span class="asteric"></span></label><br>
+				<label for="Adress" class="inline">Adress </label><br>
 				<textarea rows="6" cols="30" class="input-box" id="address" placeholder="Adress Here"></textarea>
 				<span class="asteric"></span>
 			</div>
@@ -95,7 +95,8 @@
 				<label for="Gender" class="input-box">Gender </label><br>
             	<input type="radio" name="gender" value="male"> Male<br>
   				<input type="radio" name="gender" value="female"> Female<br>
- 				<input type="radio" name="gender" value="other"> Other
+ 				<input type="radio" name="gender" value="other"> Other<br>
+ 				<span class="asteric"></span>
 			</div>
 			<div >
 				<button class="button-Submit" id="button" type="button" value="Submit">Submit</button>

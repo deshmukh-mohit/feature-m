@@ -67,7 +67,10 @@ function validate(fieldId, msg, maxLen, minLen, regEx){
         var $this = $(this)
         var fieldLen = $(this).val().length;
         var val=$(this).val();
-v
+
+        if(fieldLen < minLen && fieldLen > maxLen ){
+            $this.next('.asteric').text(msg).show().addClass('input-box');
+        }else {
             $this.next('.asteric').text(msg).hide().removeClass('input-box');
         }
 

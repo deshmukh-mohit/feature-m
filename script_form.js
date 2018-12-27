@@ -19,17 +19,17 @@ $(document).ready(function(){
     $( "#button" ).click(function(){
         console.log($(".input-box").length);
         if ($(".input-box").length<=2) {
-	var person = {
-            firstName: $("#firstName").val(),
-            lastName: $("#lastName").val(),
-            emailId: $("#emailId").val(),
-            password: $("#password").val(),
-            phone: $("#phone").val(),
-            birthday: $("#birthday").val(),
-            address:$("#address").val(),
-            country: $('#country option:selected').text(),
-            gender: $("input[name=gender]:checked").val()
-        }
+	       var person = {
+                firstName: $("#firstName").val(),
+                lastName: $("#lastName").val(),
+                emailId: $("#emailId").val(),
+                password: $("#password").val(),
+                phone: $("#phone").val(),
+                birthday: $("#birthday").val(),
+                address:$("#address").val(),
+                country: $('#country option:selected').text(),
+                gender: $("input[name=gender]:checked").val()
+            }
         var params=JSON.stringify(person);
         // var jsonData=JSON.parse('http://localhost:3000/person');
 
@@ -53,74 +53,53 @@ $(document).ready(function(){
     }
       });    
 }); 
-    var fname=/^[a-zA-Z\-]+$/;
-    var lname=/^[a-zA-Z\-]+$/;
-    var eid=/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
-    var phn=/^(\+\d{1,3}[- ]?)?\d$/;
-    var pass=/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/;
-    var ad=/^[a-zA-Z\-]+$/;
     
-    validate("#firstName","Invalid First Name",20,5,fname);
-    validate("#lastName","Invalid Last Name",20,5,lname);
-    validate("#emailId","Invalid Email ID",30,9,eid);
-    validate("#phone","Invalid Phone Number",13,10,phn);
-    validate("#password","min 8, 1 special chars and one number",15,8,pass);
-    validate("#address","Pls enter the adress",30,5,ad);
+
+    validate("#firstName","Invalid First Name",20,5,/^[a-zA-Z\-]+$/);
+    validate("#lastName","Invalid Last Name",20,5,/^[a-zA-Z\-]+$/);
+    validate("#emailId","Invalid Email ID",30,9,/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/);
+    validate("#phone","Invalid Phone Number",13,10,/^((\+[1-9]{1,4}[ \-]*)|(\([0-9]{2,3}\)[ \-]*)|([0-9]{2,4})[ \-]*)*?[0-9]{3,4}?[ \-]*[0-9]{3,4}?$/);
+    validate("#password","min 8, 1 special chars and one number",15,8,/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/);
+    validate("#address","Pls enter the adress",30,5,/^[a-zA-Z\-]+$/);
 function validate(fieldId, msg, maxLen, minLen, regEx){   
-    var color='red';
+    console.log(regEx);
     $(fieldId).focusout(function(){
         var $this = $(this)
         var fieldLen = $(this).val().length;
         var val=$(this).val();
-
-        if(fieldLen < minLen && fieldLen > maxLen ){
-            console.log(fieldId);
-            $this.next('.asteric').text(msg).show();
-            $this.addClass('input-box');
-            $('.asteric').css('color', color);
-        }else {
-            $this.next('.asteric').text(msg).hide();
-            $this.removeClass('input-box');
+v
+            $this.next('.asteric').text(msg).hide().removeClass('input-box');
         }
 
         if(regEx.test(val)){
-            $this.next('.asteric').text(msg).hide();
-            $this.removeClass('input-box');
+            $this.next('.asteric').text(msg).hide().removeClass('input-box');
         }else{
-            $this.next('.asteric').text(msg).show();
-            $this.addClass('input-box');
-            $('.asteric').css('color', color);
+            $this.next('.asteric').text(msg).show().addClass('input-box');
         }
     })
 }
 
-$("#conpwd").focusout(function(){
+var conpwd=$("#conpwd");
+var country=$("#country");
+conpwd.focusout(function(){
     var msg= "Password dosen't match";
-    var color='red';
-    if($("#password").val() == $("#conpwd").val()){
-         $("#conpwd").next('.asteric').text(msg).hide();
-            $("#conpwd").removeClass('input-box');
+    if($("#password").val() == conpwd.val()){
+         conpwd.next('.asteric').text(msg).hide().conpwd.removeClass('input-box');
         }else{
-            $("#conpwd").next('.asteric').text(msg).show();
-            $("#conpwd").addClass('input-box');
-            $('.asteric').css('color', color);
+            conpwd.next('.asteric').text(msg).show().conpwd.addClass('input-box');
         }
 })
 
-$("#country").focusout(function(){
-    var e = $("#country").val();
+country.focusout(function(){
+    var e = country.val();
     var msg= "Select the country";
-    var color='red';
-    var strUser=$("#country").val();
+    var strUser=country.val();
     
     if(strUser==0)
        {
-            $("#country").next('.asteric').text(msg).show();
-            $("#country").addClass('input-box');
-            $('.asteric').css('color', color);
+            country.next('.asteric').text(msg).show().country.addClass('input-box');
      }else{
-             $("#country").next('.asteric').text(msg).hide();
-            $("#country").removeClass('input-box');
+             country.next('.asteric').text(msg).hide().country.removeClass('input-box');
     }
 })
 

@@ -1,4 +1,11 @@
 $(document).ready(function(){
+        function print(data,i){
+            var Html="<tr><td>"+data[i].firstName+"</td><td>"+data[i].lastName+"</td><td>"
+             +data[i].emailId+"</td><td>"+data[i].phone+"</td><td>"+data[i].gender+"</td><td>"
+             +data[i].birthday+"</td><td>"+data[i].country+"</td><td>"+data[i].address+"</td></tr>";
+             $('#tbody').append(Html);
+        }
+
      var aj = $.ajax({
         url: 'http://localhost:3000/person',
         type: 'get',
@@ -7,18 +14,15 @@ $(document).ready(function(){
  aj.done(function(data) {
      for(var i=0;i<data.length;i++)
            {
-             var Html="<tr><td>"+data[i].firstName+"</td><td>"+data[i].lastName+"</td><td>"
-             +data[i].emailId+"</td><td>"+data[i].phone+"</td><td>"+data[i].gender+"</td><td>"
-             +data[i].birthday+"</td><td>"+data[i].country+"</td><td>"+data[i].address+"</td></tr>";
-             $('#tbody').append(Html);
+             print(data,i);
 
            }
     }); 
 
 
     $( "#button" ).click(function(){
-        console.log($(".input-box").length);
-        if ($(".input-box").length<=2) {
+        console.log($(".input-invalid").length);
+        if ($(".input-invalid").length=0) {
 	       var person = {
                 firstName: $("#firstName").val(),
                 lastName: $("#lastName").val(),
@@ -41,15 +45,13 @@ $(document).ready(function(){
             dataType: 'json',
             contentType: 'application/json',
             success: function (data) {
-               var Html="<tr><td>"+data.firstName+"</td><td>"+data.lastName+"</td><td>"
-             +data.emailId+"</td><td>"+data.phone+"</td><td>"+data.gender+"</td><td>"
-             +data.birthday+"</td><td>"+data.country+"</td><td>"+data.address+"</td></tr>";
-             $('#tbody').append(Html);
+              print(data,0);
             } 
         });
     }
     else{
-        alert("Please enter feilds showing Invalid");
+        console.log($(".input-invalid").length);
+        alert("Please fill the empty feilds " );
     }
       });    
 }); 
@@ -60,7 +62,7 @@ $(document).ready(function(){
     validate("#emailId","Invalid Email ID",30,9,/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/);
     validate("#phone","Invalid Phone Number",13,10,/^((\+[1-9]{1,4}[ \-]*)|(\([0-9]{2,3}\)[ \-]*)|([0-9]{2,4})[ \-]*)*?[0-9]{3,4}?[ \-]*[0-9]{3,4}?$/);
     validate("#password","min 8, 1 special chars and one number",15,8,/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/);
-    validate("#address","Pls enter the adress",30,5,/^[a-zA-Z\-]+$/);
+    validate("#address","Pls enter the adress",30,5,/^[A-Za-z0-9'\.\-\s\,]/);
 function validate(fieldId, msg, maxLen, minLen, regEx){   
     console.log(regEx);
     $(fieldId).focusout(function(){
@@ -69,15 +71,15 @@ function validate(fieldId, msg, maxLen, minLen, regEx){
         var val=$(this).val();
 
         if(fieldLen < minLen && fieldLen > maxLen ){
-            $this.next('.asteric').text(msg).show().addClass('input-box');
+            $this.next('.asteric').addClass('input-invalid').text(msg).show();
         }else {
-            $this.next('.asteric').text(msg).hide().removeClass('input-box');
+            $this.next('.asteric').removeClass('input-invalid').text(msg).hide();
         }
 
         if(regEx.test(val)){
-            $this.next('.asteric').text(msg).hide().removeClass('input-box');
+            $this.next('.asteric').removeClass('input-invalid').text(msg).hide();
         }else{
-            $this.next('.asteric').text(msg).show().addClass('input-box');
+            $this.next('.asteric').addClass('input-invalid').text(msg).show();
         }
     })
 }
@@ -87,9 +89,9 @@ var country=$("#country");
 conpwd.focusout(function(){
     var msg= "Password dosen't match";
     if($("#password").val() == conpwd.val()){
-         conpwd.next('.asteric').text(msg).hide().conpwd.removeClass('input-box');
+         conpwd.next('.asteric').text(msg).hide().removeClass('input-invalid');
         }else{
-            conpwd.next('.asteric').text(msg).show().conpwd.addClass('input-box');
+            conpwd.next('.asteric').text(msg).show().addClass('input-invalid');
         }
 })
 
@@ -100,9 +102,9 @@ country.focusout(function(){
     
     if(strUser==0)
        {
-            country.next('.asteric').text(msg).show().country.addClass('input-box');
+            country.next('.asteric').addClass('input-invalid').text(msg).show();
      }else{
-             country.next('.asteric').text(msg).hide().country.removeClass('input-box');
+             country.next('.asteric').removeClass('input-invalid').text(msg).hide();
     }
 })
 

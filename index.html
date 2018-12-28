@@ -42,43 +42,43 @@
 			</div>
 			<div class="col3">
                     <label for="First name" >First Name </label> 
-                    <input class="input-box" id="firstName" type="text" placeholder="First Name">
+                    <input class="input-invalid" id="firstName" type="text" placeholder="First Name">
                     <span class="asteric"></span>
 
 			</div>
 			<div class="col4">
 				<label for="Last name">Last Name </label> 
-                <input class="input-box" id="lastName" type="text" placeholder="Last Name">
+                <input class="input-invalid" id="lastName" type="text" placeholder="Last Name">
                 <span class="asteric"></span>
             </div>
             <div>
             	<label for="Email ID">Email ID </label> 
-                <input class="input-box" id="emailId" type="text" placeholder="Email ID">
+                <input class="input-invalid" id="emailId" type="text" placeholder="Email ID">
                 <span class="asteric"></span>
             </div>
             <div class="col3">
                     <label for="Password">Password </label> 
-                    <input class="input-box" id="password" type="text" placeholder="Password">
+                    <input class="input-invalid" id="password" type="text" placeholder="Password">
                     <span class="asteric"></span>
 			</div>
 			<div class="col4">
 				<label for="Confirm Password">Confirm Password </label>
-                <input class="input-box" id="conpwd" type="text" placeholder="Confirm Password">
+                <input class="input-invalid" id="conpwd" type="text" placeholder="Confirm Password">
                 <span class="asteric"></span> 
             </div>
             <div>
             	<label for="Phone No">Phone No </label>
-                <input class="input-box" id="phone" type="text" placeholder="Phone No">
+                <input class="input-invalid" id="phone" type="text" placeholder="Phone No">
                 <span class="asteric"></span> 
             </div>
             <div class="col3">
             	<label for="Birthday">Birthday </span></label><br>
-            	<input class="input-box" type="date" id="birthday" name="bday">
+            	<input  type="date" id="birthday" name="bday">
             	<span class="asteric"></span>
             </div>
             <div class="col4">
             	<label for="Country">Country </label><br>
-            	<select id="country" class="input-box" required>
+            	<select id="country" class="input-invalid" required>
   					<option value="0">None</option>
  		 			<option value="1">China</option>
  		 			<option value="2">France</option>
@@ -89,17 +89,22 @@
 			</div>
 			<div class="col3">
 				<label for="Adress" class="inline">Adress </label><br>
-				<textarea rows="6" cols="30" class="input-box" id="address" placeholder="Adress Here"></textarea>
+				<textarea rows="6" cols="30" class="input-invalid" id="address" placeholder="Adress Here"></textarea>
 				<span class="asteric"></span>
 			</div>
-			<div class="col4 ">
-				<label for="Gender" class="input-box">Gender </label>
-				<input type="radio" checked="checked" name="gender">
-				<label class="radio"> Male</label>
-				 <input type="radio" name="gender">
-				<label class="radio"> Female</label>
-				 <input type="radio" name="gender">
-				<label class="radio"> Other</label>
+			<div class="col4 radio-button">
+				<label for="Gender">Gender </label>
+				
+				<label class="radio"> Male
+				<input type="radio" name="gender">
+				</label>
+				 
+				<label class="radio"> Female
+				<input type="radio" name="gender"></label>
+				 
+				<label class="radio"> Other
+				<input type="radio" name="gender">
+				</label>
 				 
 				
 				<!-- <label for="Gender" class="input-box">Gender </label>
